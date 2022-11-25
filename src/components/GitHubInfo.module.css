@@ -1,0 +1,23 @@
+.container{
+    /* display: flex;
+    flex-direction: s; */
+    /* width: 45%; */
+    text-align: center;
+    padding:0.5rem;
+    /* justify-content: end; */
+}
+.name{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin:0;
+}
+
+.quantity{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}

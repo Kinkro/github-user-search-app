@@ -1,0 +1,76 @@
+
+h4,p{
+    margin:0;
+    padding: 0;
+}
+h2{
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    margin-bottom: 0;
+    color: #FFFFFF;
+    margin-top:0;
+}
+.mainContainer{
+    font-family: 'Space Mono';
+    font-style: normal;
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    background-color: #1E2A47;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 2rem 0;
+}
+
+
+.imgContainer{
+    display: flex;
+    width: 25%;
+    justify-content: flex-end;
+    height:100%;
+    align-items: center;
+    padding:0 0.5rem;
+}
+
+.img{
+    /* display: block; */
+    width:7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    width:40%;
+}
+.nickname{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0079FF;
+}
+.time{
+    align-self: flex-start;
+    width:30%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+    }
+
+.bio{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+}
+
+.noBio{
+    color: gray;
+}
