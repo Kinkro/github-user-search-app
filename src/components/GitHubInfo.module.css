@@ -10,8 +10,11 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 19px;
-    color: #FFFFFF;
     margin:0;
+    color: #FFFFFF;
+}
+.darkName{
+    color: #2B3442;
 }
 
 .quantity{
@@ -20,4 +23,7 @@
     line-height: 33px;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+.darkQuantity{
+    color: #2B3442;
 }

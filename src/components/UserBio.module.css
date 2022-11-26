@@ -3,7 +3,7 @@ h4,p{
     margin:0;
     padding: 0;
 }
-h2{
+.name{
     font-weight: 700;
     font-size: 26px;
     line-height: 39px;
@@ -11,40 +11,23 @@ h2{
     color: #FFFFFF;
     margin-top:0;
 }
+
+.lightName{
+    color: #2B3442;
+}
 .mainContainer{
     font-family: 'Space Mono';
     font-style: normal;
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    background-color: #1E2A47;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    padding: 2rem 0;
 }
 
 
-.imgContainer{
-    display: flex;
-    width: 25%;
-    justify-content: flex-end;
-    height:100%;
-    align-items: center;
-    padding:0 0.5rem;
-}
-
-.img{
-    /* display: block; */
-    width:7rem;
-    height: 7rem;
-    border-radius: 50%;
-}
 
 .info {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-    width:40%;
+    width:60%;
+    height:100%;
 }
 .nickname{
     font-weight: 400;
@@ -54,23 +37,24 @@ h2{
 }
 .time{
     align-self: flex-start;
-    width:30%;
+    width:40%;
     text-align: center;
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
-    color: #FFFFFF;
+    color: #697C9A;
+    white-space: normal;
     }
 
 .bio{
     font-weight: 400;
     font-size: 15px;
     line-height: 25px;
-    color: #FFFFFF;
-    mix-blend-mode: normal;
-    opacity: 0.75;
+    color: #4B6A9B;
+    /* mix-blend-mode: normal; */
+    /* opacity: 0.75; */
 }
 
 .noBio{
-    color: gray;
+    color: #4B6A9B;
 }

@@ -1,0 +1,57 @@
+.titleContainer{
+    width:55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width:470px;
+    /* padding: 0 1rem; */
+    /* border:1px solid white; */
+}
+.darkTitle{
+    padding-left: 1rem;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color:white;
+}
+.lightTitle{
+    padding-left: 1rem;
+    font-family: 'Space Mono';
+    font-style: normal; 
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 39px;
+    color:#222731;
+}
+
+.darkLight{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    cursor: pointer;
+}
+
+.darkLightIcons{
+    padding-right: 1rem;
+    max-height: 1.5rem;
+}
+
+.dark{
+    color:#697C9A;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    /* text-align: right; */
+    letter-spacing: 2.5px;
+}
+
+.light{
+    color:white;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: right;
+    letter-spacing: 2.5px;
+}

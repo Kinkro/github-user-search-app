@@ -1,13 +1,14 @@
 import styles from "./UserBio.module.css";
 
-export default function UserBio({ user, dateChange }) {
+export default function UserBio({ light, user, dateChange }) {
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.imgContainer}>
-        <img className={styles.img} src={user.avatar_url} alt="username" />
-      </div>
       <div className={styles.info}>
-        <h2>{user.name}</h2>
+        <h2
+          className={light ? `${styles.name} ${styles.lightName}` : styles.name}
+        >
+          {user.name}
+        </h2>
         <h4 className={styles.nickname}>{user.login}</h4>
         <p
           className={

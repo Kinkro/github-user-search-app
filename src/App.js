@@ -10,10 +10,14 @@ import UserBio from "./components/UserBio";
 import { useState, useEffect } from "react";
 import GitHubInfo from "./components/GitHubInfo";
 import Contact from "./components/Contact";
+import DarkLight from "./components/DarkLight";
+// import sunIcon from "./assets/icon-sun.svg";
+// import moonIcon from "./assets/icon-moon.svg";
 
 function App() {
   const [user, setUser] = useState("");
   const [userName, setUserName] = useState("octocat");
+  const [light, setLight] = useState(false);
   const gitHubInfo = [
     {
       name: "Repos",
@@ -62,45 +66,117 @@ function App() {
       console.error(error);
     }
   }
-  // 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 >>>>gh token
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log(user);
   const dateChange = (user) => {
     let date = new Date(user);
     return (user =
       date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear());
   };
+
+  const handleClick = () => {
+    setLight(!light);
+  };
+  console.log(light);
   return (
-    <div className="App">
-      <div className="componentContainer">
-        <SearchBar
-          className="gap"
-          fetchData={fetchData}
-          setUserName={setUserName}
-          userName={userName}
-        />
-        <UserBio dateChange={dateChange} user={user} />
-        <div className="mainContent">
-          <div className="gitHubInfo">
-            {gitHubInfo.map((info) => (
-              <GitHubInfo name={info.name} user={info.user} />
-            ))}
+    <>
+      {light ? (
+        <div className="App lightApp">
+          <DarkLight handleClick={handleClick} light={light} />
+          <SearchBar
+            // className="gap"
+            fetchData={fetchData}
+            setUserName={setUserName}
+            userName={userName}
+            light={light}
+          />
+          <div className="componentContainer">
+            <div className="imgContainer">
+              <img className="img" src={user.avatar_url} alt="username" />
+            </div>
+            <UserBio
+              className="userBio"
+              dateChange={dateChange}
+              user={user}
+              light={light}
+            />
+            <div className="mainContent">
+              <div className={!light ? "gitHubInfo" : "gitHubInfo lightGHInfo"}>
+                {gitHubInfo.map((info) => (
+                  <GitHubInfo
+                    light={light}
+                    key={info.name}
+                    name={info.name}
+                    user={info.user}
+                  />
+                ))}
+              </div>
+
+              <div className="grid">
+                {contacts.map((contact) => (
+                  <Contact
+                    light={light}
+                    key={contact.src}
+                    src={contact.src}
+                    user={contact.user}
+                    href={contact.href}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="grid">
-          {contacts.map((contact) => (
-            <Contact
-              src={contact.src}
-              user={contact.user}
-              href={contact.href}
+      ) : (
+        <div className="App">
+          <DarkLight handleClick={handleClick} light={light} />
+          <SearchBar
+            // className="gap"
+            fetchData={fetchData}
+            setUserName={setUserName}
+            userName={userName}
+            light={light}
+          />
+          <div className="componentContainer darkCompCont">
+            <div className="imgContainer">
+              <img className="img" src={user.avatar_url} alt="username" />
+            </div>
+            <UserBio
+              className="userBio"
+              dateChange={dateChange}
+              user={user}
+              light={light}
             />
-          ))}
+            <div className="mainContent">
+              <div className="gitHubInfo">
+                {gitHubInfo.map((info) => (
+                  <GitHubInfo
+                    light={light}
+                    key={info.name}
+                    name={info.name}
+                    user={info.user}
+                  />
+                ))}
+              </div>
+
+              <div className="grid">
+                {contacts.map((contact) => (
+                  <Contact
+                    light={light}
+                    key={contact.src}
+                    src={contact.src}
+                    user={contact.user}
+                    href={contact.href}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
