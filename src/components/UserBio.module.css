@@ -18,17 +18,12 @@ h4,p{
 .mainContainer{
     font-family: 'Space Mono';
     font-style: normal;
-    display: flex;
+    display: grid;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 }
 
 
-
-.info {
-    width:60%;
-    height:100%;
-}
 .nickname{
     font-weight: 400;
     font-size: 16px;
@@ -36,9 +31,6 @@ h4,p{
     color: #0079FF;
 }
 .time{
-    align-self: flex-start;
-    width:40%;
-    text-align: center;
     font-weight: 400;
     font-size: 15px;
     line-height: 22px;
@@ -57,4 +49,15 @@ h4,p{
 
 .noBio{
     color: #4B6A9B;
+}
+
+
+@media only screen and (max-width:767px){
+    .mainContainer{
+        flex-direction: column;
+    }
+    .name{
+        font-size: 24px;
+    }
+
 }

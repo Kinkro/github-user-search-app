@@ -1,7 +1,7 @@
 import searchIcon from "../assets/icon-search.svg";
 import styles from "./SearchBar.module.css";
 
-export default function SearchBar({ light, setUserName, fetchData }) {
+export default function SearchBar({ light, userName, setUserName, fetchData }) {
   return (
     <>
       {light ? (
@@ -14,9 +14,16 @@ export default function SearchBar({ light, setUserName, fetchData }) {
               console.log(e.target.value);
               setUserName(e.target.value);
             }}
+            value={userName}
           />
           <img src={searchIcon} alt="" className={styles.searchIcon} />
-          <button onClick={fetchData} className={styles.button}>
+          <button
+            onClick={() => {
+              fetchData();
+              setUserName("");
+            }}
+            className={styles.button}
+          >
             Search
           </button>
         </div>
@@ -30,9 +37,16 @@ export default function SearchBar({ light, setUserName, fetchData }) {
               console.log(e.target.value);
               setUserName(e.target.value);
             }}
+            value={userName}
           />
           <img src={searchIcon} alt="" className={styles.searchIcon} />
-          <button onClick={fetchData} className={styles.button}>
+          <button
+            onClick={() => {
+              fetchData();
+              setUserName("");
+            }}
+            className={styles.button}
+          >
             Search
           </button>
         </div>
